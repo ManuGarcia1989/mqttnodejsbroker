@@ -9,7 +9,6 @@
   "author": "Manuel Garcia",
   "license": "ISC",
   "dependencies": {
-    "mosca": "^2.8.3",
-    "mqtt": "^4.2.6"
+    "aedes": "^0.45.0"
   }
 }

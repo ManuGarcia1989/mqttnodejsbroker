@@ -1,7 +1,7 @@
-var mosca  = require('mosca')
-var settings = {port: 9001}
-var broker = new mosca.Server(settings)
+const aedes = require('aedes')()
+const server = require('net').createServer(aedes.handle)
+const port = 9001
 
-broker.on('ready', ()=>{
-    console.log('Broker is ready')
+server.listen(port, function () {
+  console.log('server started and listening on port ', port)
 })
