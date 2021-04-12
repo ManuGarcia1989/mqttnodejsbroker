@@ -21,7 +21,7 @@ services:
       - '80:80'
       - '443:443'
     environment:
-      DOMAIN: 'speechgame.manuel-garciaromero.com -> http://socket_server:3000'
+      DOMAIN: 'ssss.manuel-garciaromero.com -> http://socket_server:3000'
       STAGE: 'production'
     links:
       - socket_server
