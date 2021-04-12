@@ -1,7 +1,10 @@
-const aedes = require('aedes')()
-const server = require('net').createServer(aedes.handle)
-const port = 9001
+require('dotenv').config();
 
-server.listen(port, function () {
-  console.log('server started and listening on port ', port)
-})
+const Server = require('./models/server')
+
+
+const server = new Server();
+
+
+
+server.listen();
