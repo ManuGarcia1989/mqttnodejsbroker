@@ -1,10 +1,10 @@
 version: '3'
 
 services:
-  mqttjs:
+  socket_server:
     build: .
-    ports:
-    - 3000:3000
+    #ports:
+    #- 3000:3000
     container_name: socket_server
     volumes:
       - ./:/usr/src/app
@@ -17,10 +17,10 @@ services:
       - '80:80'
       - '443:443'
     environment:
-      DOMAIN: '104.236.97.95 -> http://mqttjs:3000'
+      DOMAIN: '104.236.97.95 -> http://socket_server:3000'
       STAGE: 'production'
     links:
-      - mqttjs
+      - socket_server
     volumes:
       - https-portal-data:/var/lib/https-portal
 volumes:
