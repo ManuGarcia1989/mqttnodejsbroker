@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3'
 
 services:
   mqttjs:
@@ -23,6 +23,6 @@ services:
       - mqttjs
     volumes:
       - https-portal-data:/var/lib/https-portal
-  volumes:
-    https-portal-data: #
+volumes:
+  https-portal-data: #
       
