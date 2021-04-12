@@ -23,9 +23,9 @@ class Server {
     sockets(){
         this.io.on('connection', socket => {
             console.log('Cliente conectado')
-            socket.on('send-message', (payload)=>{
+            socket.on('sendmessage', (payload)=>{
                 console.log(payload);
-                this.io.emit('server-message',payload);
+                this.io.emit('servermessage',payload);
             });
         });
     }

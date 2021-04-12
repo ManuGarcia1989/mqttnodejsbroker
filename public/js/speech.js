@@ -17,7 +17,9 @@ socket.on('disconnect', () => {
     lblOffline.style.display = '';
     lblOnline.style.display = 'none';
 });
-
+socket.on('servermessage',( payload) => {
+    console.log(payload);
+});
 var message = document.querySelector('#message');
 var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
 var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
@@ -41,10 +43,10 @@ recognition.onresult = function(event){
                 //Enviar data de voz 
                
             var payload = {
-                message: event.results[i][0].transcript,
+                message: (event.results[i][0].transcript).toString(),
                 id: 'speech'
             } 
-                socket.emit('send-message',payload );
+                socket.emit('sendmessage',(event.results[i][0].transcript).toString() );
             }
         }
     }
