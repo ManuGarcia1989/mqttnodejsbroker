@@ -22,6 +22,7 @@ services:
     links:
       - mqttjs
     volumes:
-      - https-portal-data: #
-
+      - https-portal-data:/var/lib/https-portal
+  volumes:
+    https-portal-data: #
       
