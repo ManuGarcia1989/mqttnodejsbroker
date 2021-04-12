@@ -9,7 +9,7 @@ services:
     container_name: socket_server
     working_dir: /usr/src/app
     command: >
-      /bin/sh -c "npm install && node index.js"
+      /bin/sh -c "npm install && nodemon index.js"
     volumes:
       - ./:/usr/src/app
     restart: always
