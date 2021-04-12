@@ -3,8 +3,8 @@ version: '3'
 services:
   socket_server:
     build: .
-    #ports:
-    #- 3000:3000
+    ports:
+    - '3000'
     container_name: socket_server
     volumes:
       - ./:/usr/src/app
