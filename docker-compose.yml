@@ -1,20 +1,23 @@
 version: '3'
 
 services:
-  web:
-    build: .
+  https-portal:
+    image: steveltn/https-portal:1
     ports:
-    - 80:80
-    container_name: web 
+      - '80:80'
+      - '443:443'
+    environment:
+      DOMAINS: 'speechgame.manuel-garciaromero.com -> http://socket_server:3000'
+      STAGE: 'production' # Don't use production until staging works
     volumes:
-      - ./:/usr/share/nginx/html
-    restart: always
-    
+      - https-portal-data:/var/lib/https-portal    
+    links:
+      - socket_server
   socket_server:
     #build: .
     image: node:14
     ports:
-      - 3000:3000
+      - "3000"
     container_name: socket_server
     working_dir: /usr/src/app
     command: >
@@ -25,3 +28,5 @@ services:
 
 
     
+volumes:
+    https-portal-data:
