@@ -18,6 +18,7 @@ services:
     image: node:14
     ports:
       - "3000"
+      - "5000"
     container_name: socket_server
     working_dir: /usr/src/app
     command: >
