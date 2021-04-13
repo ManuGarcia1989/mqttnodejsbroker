@@ -47,6 +47,7 @@ recognition.onresult = function(event){
                 id: 'speech'
             } 
                 socket.emit('sendmessage',(event.results[i][0].transcript).toString() );
+                //socket.emit('message',(event.results[i][0].transcript).toString() );
             }
         }
     }

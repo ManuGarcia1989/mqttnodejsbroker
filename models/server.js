@@ -7,6 +7,7 @@ class Server {
         this.port = 3000;
         this.server = require('http').createServer(this.app);
         this.io = require('socket.io')(this.server);
+        //this.ws = new require('ws').Server(this.server);
         this.path = {};
         this.middlewares();
         this.routes();
@@ -27,7 +28,9 @@ class Server {
                 console.log(payload);
                 this.io.emit('servermessage',payload);
             });
+           
         });
+
     }
     listen(){
         this.server.listen(this.port, ()=>{

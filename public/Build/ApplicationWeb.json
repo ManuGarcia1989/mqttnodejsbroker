@@ -3,7 +3,7 @@
 "productName": "T-Rex Voice Recognition WebGL and Win",
 "productVersion": "0.1",
 "dataUrl": "ApplicationWeb.data.unityweb",
-"wasmCodeUrl": "ApplicationWeb.wasm.code.unityweb",
+"wasmCodeUrl": "ApplicationWeb.wasm",
 "wasmFrameworkUrl": "ApplicationWeb.wasm.framework.unityweb",
 "graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
 "webglContextAttributes": {"preserveDrawingBuffer": false},
