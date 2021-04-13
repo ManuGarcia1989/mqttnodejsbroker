@@ -7,12 +7,14 @@ services:
       - '80:80'
       - '443:443'
     environment:
-      DOMAINS: 'speechgame.manuel-garciaromero.com -> http://socket_server:3000'
+      DOMAINS: 'speechgame.manuel-garciaromero.com -> http://socket_server:3000 , threejs.manuel-garciaromero.com -> http://socket_server:3001'
       STAGE: 'production' # Don't use production until staging works
     volumes:
       - https-portal-data:/var/lib/https-portal    
     links:
       - socket_server
+      - socket_server2
+      
   socket_server:
     #build: .
     image: node:14
